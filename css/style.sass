@@ -1,0 +1,130 @@
+// Project name: Porkeris
+
+// Google font
+@import url('https://fonts.googleapis.com/css?family=Poppins:200&display=swap')
+
+// Remix Icon
+@import url('https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css')
+
+//Bootstrap
+@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css')
+
+//Variables
+$font: 'Poppins', serif
+$clr: #353745
+$blk: #333333
+$w: #fff
+
+*,*,*:after,*:before
+    margin: 0
+    padding: 0
+    position: relative
+    box-sizing: border-box
+
+html,body
+    font-family: $font
+    font-weight: 400
+    scroll-behavior: smooth
+    color: $blk
+
+body,main
+    background-color: #f1f3f6
+
+h1,h2,h3,h4,h5,h6
+    font-weight: 700
+
+div,header,nav,footer,section,aside,article
+    display: block
+
+p
+    color: $blk
+
+a
+    color: $clr
+    text-decoration: none
+    &:hover
+        text-decoration: none
+
+ul
+    margin: 0
+    padding: 0
+    li
+        list-style-type: none
+
+img
+    width: 100%
+
+
+/* Main CSS */
+.selection
+    position: fixed
+    bottom: 10px
+    left: 50%
+    transform: translate(-50%,-50%)
+    background-color: $w
+    z-index: 999999
+    box-shadow: 0 0 18px rgba(0,0 , 0, 0.09)
+    min-width: 200px
+    padding: 15px 0
+    border-radius: 4px
+    @media (min-width: 315px) and (max-width: 576px)
+        bottom: 0
+        left: 0
+        right: 0
+        transform: translate(0)
+        border-radius: 0
+        ul
+            justify-content: center
+    ul
+        display: flex
+        justify-content: space-between
+        li
+            padding: 0 30px
+            text-align: center
+            border-left: 1px solid #c1c6ce
+            i
+                vertical-align: bottom
+        li:first-child
+            border: none
+
+.title
+    font-size: 32px
+    margin-bottom: 30px
+    color: $blk
+
+header
+    background-color: $blk
+    padding: 10px
+    *
+        color: $w
+
+main
+    @media (min-width: 315px) and (max-width: 576px)
+        margin-bottom: 100px
+    section
+        .color-container
+            margin-top: 30px
+            margin-bottom: 30px
+            .color-row
+                .color-box
+                    height: 200px
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    color: $w
+                    transition: transform 0.2s linear
+                    position: relative
+                    overflow: hidden
+                    &:hover
+                        cursor: url('../images/pen.png'), auto
+                        transform: scaleY(1.1)
+                        z-index: 99999
+                        &::after
+                            bottom: 10px
+                    &::after
+                        position: absolute
+                        content: 'Click to copy'
+                        left: 50%
+                        bottom: -50px
+                        transform: translate(-50%,-50%)
+                        transition: all 0.2s linear
